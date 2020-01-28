@@ -82,7 +82,26 @@ public class LinkedList {
     }
   }
 
-  
+  public void insertNode(int data, int index) {
+    if(index < 0 || index > this.size) {
+      return;
+    } else if ( index == this.size){
+      addToTail(data);
+      return;
+    } else if ( index == 0) {
+      addToStart(data);
+      return;
+    } else {
+      Node indexNode = getNode(index -1);
+      Node afterNode = indexNode.getNext();
+      Node newNode = new Node(data);
+      indexNode.setNext(newNode);
+      newNode.setNext(afterNode);
+    }
+    this.size++;
+  }
+
+
 
   public void printLL() {
     Node current = head;

@@ -14,7 +14,5 @@ public class Main {
       linkedList.addToTail(11);
       System.out.println(linkedList.getSize());
       linkedList.printLL();
-
-
     }
 }
