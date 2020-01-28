@@ -74,9 +74,15 @@ public class LinkedList {
   }
 
   public void setNode(int data, int position) {
-    Node upgradedNode = getNode(position);
-    upgradedNode.setData(data);
+    if(position < 0 || position >= this.size) {
+      return;
+    } else {
+      Node upgradedNode = getNode(position);
+      upgradedNode.setData(data);
+    }
   }
+
+  
 
   public void printLL() {
     Node current = head;
