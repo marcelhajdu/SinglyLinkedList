@@ -101,6 +101,28 @@ public class LinkedList {
     this.size++;
   }
 
+  public void removeNode(int index) {
+    if(index < 0 || index >= this.size) return;
+    else if(index == this.size-1) {
+      removeFromTail();
+      return;
+    } else if(index == 0) {
+      deleteFromStart();
+      return;
+    } else {
+      Node previousNode = getNode(index-1);
+      Node deletedNode = getNode(index);
+      Node nextNode = deletedNode.getNext();
+      previousNode.setNext(nextNode);
+      this.size--;
+    }
+  }
+
+  public void reverse() {
+    //definialunk egy currentet
+    //amig a current.next.next-je true
+    //
+  }
 
 
   public void printLL() {
